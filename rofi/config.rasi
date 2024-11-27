@@ -1,0 +1,76 @@
+/* My Config */
+configuration {
+  modi: [drun, window, ssh];
+  display-drun: "Applications";
+  display-windows: "Windows";
+  font: "Firacode Nerd Font 12";
+  show-icons: false; 
+  matching: "fuzzy";
+}
+@theme "/dev/null"
+
+* {
+  input-bg:    #c397d8b5;
+  list-bg:     #00000070;
+  transparent: #00000000;
+
+  fg:         #c397d8b5;
+  fg-alt:     #dfdfdf;
+
+  background-color: @transparent;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 40%;
+  height: 40%;
+}
+
+element {
+  padding: 8 0;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+}
+
+element-text {
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+}
+
+entry {
+  padding: 12;
+  text-color: @fg-alt;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @input-bg;
+}
+
+listview {
+  padding: 8 12;
+  background-color: @list-bg;
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg-alt;
+}

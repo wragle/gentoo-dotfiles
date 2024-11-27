@@ -1,0 +1,19 @@
+[window]
+padding = { x = 7, y = 7 }
+opacity = 0.75
+
+[font]
+normal.family      = "FiraCode Nerd Font"
+bold.family        = "FiraCode Nerd Font"
+italic.family      = "FiraCode Nerd Font"
+bold_italic.family = "FiraCode Nerd Font"
+size = 10.5
+
+[cursor.style]
+#shape = "Beam"
+#blinking = "On"
+
+[cursor]
+blink_interval = 650
+#thickness = 0.2
+
