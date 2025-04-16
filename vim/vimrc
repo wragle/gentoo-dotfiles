@@ -1,0 +1,75 @@
+"
+" my vimrc
+"
+" est. 13/04/2025
+"
+
+" environment
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
+" disable vi compatibility
+set nocompatible
+
+" enable syntax highlighting
+syntax enable
+filetype plugin on
+filetype plugin indent on
+
+" searches down into subdirectories
+" provides tab-completion for file-related tasks
+set path+=**
+
+" display all matching files when we tab complete
+set wildmenu
+
+" ctags
+" command! MakeTags !ctags -R .
+
+" latex binds
+"map Q :! pdflatex %<CR><CR>
+"map W :! zathura $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
+
+" binds control to escape
+inoremap <C-c> <Esc>
+
+" relative line numbers
+set nu rnu
+
+" column width
+set numberwidth=2
+
+" end-of-line marker colours
+highlight NonText ctermfg=5 guifg=purple
+highlight LineNr  ctermfg=4 guifg=blue
+
+" bar cursor for insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+" vim plug
+" auto installation
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.config/vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" plugins
+call plug#begin()
+
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/goyo.vim'
+
+call plug#end()
+
+

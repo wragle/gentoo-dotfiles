@@ -23,12 +23,10 @@ font pango:FiraCode Nerd Font 9
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# fyp countdown notifications
-exec --no-startup-id notify-send "$(python3 /home/anish/.local/bin/countdown.py)"
 # tmt notifications
-exec --no-startup-id /home/anish/.local/bin/tmt-notify.sh
+exec --no-startup-id "source /home/anish/.bashrc && /home/anish/.local/bin/tmt-notify.sh"
 # bottle notifications
-exec --no-startup-id /home/anish/.local/bin/bottle-notify.sh
+exec --no-startup-id "source /home/anish/.bashrc && /home/anish/.local/bin/bottle-notify.sh"
 
 # i3 gaps
 gaps inner 20

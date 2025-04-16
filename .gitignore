@@ -10,6 +10,7 @@
 !polybar/
 !dunst/
 !ranger/
+!gammastep/
 
 !alacritty/**
 !rofi/**
@@ -18,3 +19,7 @@
 !polybar/**
 !dunst/**
 !ranger/**
+!gammastep/**
+
+!vim/
+!vim/vimrc
