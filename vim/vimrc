@@ -68,8 +68,10 @@ call plug#begin()
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'takac/vim-hardtime'
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-
+" vim hard time
+let g:hardtime_default_on = 1
