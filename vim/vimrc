@@ -36,6 +36,9 @@ set wildmenu
 " binds control to escape
 inoremap <C-c> <Esc>
 
+" unbinds escape
+inoremap <Esc> <Nop>
+
 " relative line numbers
 set nu rnu
 
