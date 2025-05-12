@@ -9,11 +9,11 @@ italic.family      = "FiraCode"
 bold_italic.family = "FiraCode"
 size = 10.5
 
-[cursor.style]
+# [cursor.style]
 #shape = "Beam"
 #blinking = "On"
 
-[cursor]
-blink_interval = 650
+# [cursor]
+# blink_interval = 650
 #thickness = 0.2
 

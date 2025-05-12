@@ -18,7 +18,10 @@
 !i3/**
 !polybar/**
 !dunst/**
-!ranger/**
+!ranger/rc.conf
+!ranger/rifle.conf
+!ranger/colorschemes/
+!ranger/colorschemes/default.py
 !gammastep/**
 
 !vim/

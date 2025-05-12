@@ -4,11 +4,7 @@
 " est. 13/04/2025
 "
 
-" environment
-set directory=$XDG_CACHE_HOME/vim,~/,/tmp
-set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+" custom vimrc path
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
 " disable vi compatibility
@@ -36,8 +32,13 @@ set wildmenu
 " binds control to escape
 inoremap <C-c> <Esc>
 
-" unbinds escape
-inoremap <Esc> <Nop>
+" sets leader character to space
+let mapleader = " "
+
+" sets leader binds
+nnoremap <leader>w :w<CR>
+nnoremap <leader>f :w<CR>0f(lgf
+
 
 " relative line numbers
 set nu rnu
@@ -78,3 +79,9 @@ call plug#end()
 
 " vim hard time
 let g:hardtime_default_on = 1
+
+" environment
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
