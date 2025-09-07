@@ -32,13 +32,51 @@ set wildmenu
 " binds control to escape
 inoremap <C-c> <Esc>
 
+" unbinds space key
+nnoremap <Space> <Nop>
+vnoremap <Space> <Nop>
+
 " sets leader character to space
 let mapleader = " "
 
-" sets leader binds
+"" sets leader binds
+" write file
 nnoremap <leader>w :w<CR>
+" opens markdown formatted path 
 nnoremap <leader>f :w<CR>0f(lgf
+" clears search highlighting
+nnoremap <leader>/ :nohlsearch<CR>
 
+" toggles macrons
+function! ToggleMacron()
+  let l:line = getline('.')
+  let l:col = col('.') - 1
+  let l:char = matchstr(strpart(l:line, l:col), '.')
+
+  let l:map = {
+        \ 'a': 'ā', 'ā': 'a',
+        \ 'e': 'ē', 'ē': 'e',
+        \ 'i': 'ī', 'ī': 'i',
+        \ 'o': 'ō', 'ō': 'o',
+        \ 'u': 'ū', 'ū': 'u',
+        \ 'A': 'Ā', 'Ā': 'A',
+        \ 'E': 'Ē', 'Ē': 'E',
+        \ 'I': 'Ī', 'Ī': 'I',
+        \ 'O': 'Ō', 'Ō': 'O',
+        \ 'U': 'Ū', 'Ū': 'U'
+        \ }
+
+  if has_key(l:map, l:char)
+    call setline('.', substitute(l:line, '\%' . (l:col + 1) . 'c.', l:map[l:char], ''))
+  endif
+endfunction
+
+command! ToggleMacron call ToggleMacron()
+nnoremap <leader>m :ToggleMacron<CR>
+
+" copy / paste binds
+vnoremap <C-c> "+y
+map <C-p> "+p
 
 " relative line numbers
 set nu rnu
@@ -72,13 +110,9 @@ call plug#begin()
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'takac/vim-hardtime'
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
-
-" vim hard time
-let g:hardtime_default_on = 1
 
 " environment
 set directory=$XDG_CACHE_HOME/vim,~/,/tmp

@@ -91,6 +91,9 @@ bindcode $mod+47 exec --no-startup-id rofi -matching glob -show drun
 # starts rofi ssh mode
 bindcode $mod+48 exec --no-startup-id rofi -matching glob -show ssh
 
+# rofi book launcher
+bindsym $mod+b exec --no-startup-id /home/anish/.local/bin/book-launcher.sh
+
 # launch programs
 bindsym $mod+f exec --no-startup-id firefox-bin
 bindsym $mod+x exec --no-startup-id alacritty --command "calcurse"
