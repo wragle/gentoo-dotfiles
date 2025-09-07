@@ -11,6 +11,7 @@
 !dunst/
 !ranger/
 !gammastep/
+!bash/
 
 !alacritty/**
 !rofi/**
@@ -23,6 +24,7 @@
 !ranger/colorschemes/
 !ranger/colorschemes/default.py
 !gammastep/**
+!bash/**
 
 !vim/
 !vim/vimrc

@@ -1,0 +1,48 @@
+# all my bash aliases :)
+
+# misc
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias egrep="grep --color=auto"
+alias ll="ls -l"
+alias la="ls -a"
+alias q="exit"
+alias update-fonts="fc-cache -rv"
+alias x="startx"
+alias src="source ~/.bashrc"
+alias rmvideos="rm /home/anish/videos/*.webm && rm /home/anish/videos/*.mp4"
+alias loggersync="rsync -a /run/media/anish/LOGGER/logs/endofnight/ /home/anish/logs/endofnight"
+alias fyp="source /home/anish/fyp/code/myenv/bin/activate"
+alias update="sudo emerge -auUD @world"
+alias clear-vim-cache="rm ~/.cache/vim/*.sw*"
+
+# poweroff/reboot
+alias shutdown="sudo poweroff"
+alias reboot="sudo reboot"
+
+# programs
+#alias neofetch="neofetch --ascii_colors 10 7 --colors 10 7 7 10 7 7"
+alias t="transmission-cli"
+alias py="python3"
+alias v="vim"
+alias sv="sudo vim"
+alias e="sudo emerge"
+alias yt-dlp="yt-dlp -P home:videos/youtube/"
+alias meditation="meditation_timer.py --start-bells 1 --end-bells 3 --interval-bells 1 --interval-time 5 --volume 0.3"
+
+# aliases to mirror i3 keybinds
+alias c="cmus"
+alias n="newsboat"
+alias r="ranger && clear"
+alias m="clear && spt && clear"
+alias s="spotify_player"
+
+# transmission daemon aliases
+alias t-start='sudo service transmission-daemon start'
+alias t-stop='sudo service transmission-daemon stop'
+alias t-reload='sudo service transmission-daemon reload'
+alias t-list='transmission-remote -n 'transmission:transmission' -l'
+alias t-basicstats='transmission-remote -n 'transmission:transmission' -st'
+alias t-fullstats='transmission-remote -n 'transmission:transmission' -si'
+alias t-add='transmission-remote -n 'transmission:transmission' -a'
+alias t-dir='cd /var/lib/transmission-daemon/downloads'

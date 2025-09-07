@@ -1,0 +1,41 @@
+# sets colour
+export COLOUR='magenta'
+
+# sets terminal colour
+case "$COLOUR" in
+	"black")
+		export TERMINAL_COLOUR='1;30m'
+		export HEX_COLOUR='#666666'
+		;;
+	"red")
+		export TERMINAL_COLOUR='1;31m'
+		export HEX_COLOUR='#d54e53'
+		;;
+	"green")
+        	export TERMINAL_COLOUR='1;32m'
+		export HEX_COLOUR='#b9ca4a'
+        	;;
+    	"yellow")
+        	export TERMINAL_COLOUR='1;33m'
+		export HEX_COLOUR='#e7c547'
+        	;;
+    	"blue")
+        	export TERMINAL_COLOUR='1;34m'
+		export HEX_COLOUR='#7aa6da'
+        	;;
+    	"magenta")
+       	 	export TERMINAL_COLOUR='1;35m'
+		export HEX_COLOUR='#c397d8'
+        	;;
+    	"cyan")
+        	export TERMINAL_COLOUR='1;36m'
+		export HEX_COLOUR='#70c0b1'
+        	;;
+    	"white")
+        	export TERMINAL_COLOUR='1;37m'
+		export HEX_COLOUR='#eaeaea'
+        	;;
+    	*)
+        	echo "Unknown colour: $COLOUR"
+        	;;
+esac
